@@ -8,7 +8,7 @@ function Create({ refreshTodos }) {
     if (!task.trim()) return; // prevent empty task
 
     try {
-      await axios.post('http://localhost:3000/add', { task });
+      await axios.post('https://pubtodobackend.onrender.com/add', { task });
       setTask('');           // clear input
       refreshTodos();        // refresh list
     } catch (err) {
