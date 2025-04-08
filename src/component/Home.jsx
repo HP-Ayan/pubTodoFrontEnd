@@ -10,7 +10,7 @@ function Home() {
 
   const fetchTodos = async () => {
     try {
-      const result = await axios.get('http://localhost:3000/get');
+      const result = await axios.get('https://pubtodobackend.onrender.com/get');
       setTodo(result.data);
     } catch (err) {
       console.log(err);
@@ -27,7 +27,7 @@ function Home() {
 
   const handleMarkDone = async (id) => {
     try {
-      await axios.put(`http://localhost:3000/update/${id}`);
+      await axios.put(`https://pubtodobackend.onrender.com/update/${id}`);
       fetchTodos();
     } catch (err) {
       console.log(err);
@@ -40,7 +40,7 @@ function Home() {
       itemElement.classList.add('deleting');
       setTimeout(async () => {
         try {
-          await axios.delete(`http://localhost:3000/delete/${id}`);
+          await axios.delete(`https://pubtodobackend.onrender.com/delete/${id}`);
           fetchTodos();
         } catch (err) {
           console.log(err);
